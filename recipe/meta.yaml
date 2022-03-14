@@ -1,0 +1,37 @@
+{% set name = "jupyterlab-desktop" %}
+{% set version = "0.0.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  path: .
+
+build:
+  number: 0
+  skip: true  # [not linux]
+
+requirements:
+  run:
+    - jupyterlab
+    - conda
+
+test:
+  commands:
+    - echo No valuable test. Requires desktop interaction.
+
+about:
+  home: https://github.com/ramonaoptics/jupyterlab-desktop-feedstock
+  summary: Desktop launchers for Jupyter Lab when installed in linux
+  description: |
+    This will create a desktop launcher for Jupyter Lab. The launcher will override
+    other launchers.
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - hmaarrfk
+
